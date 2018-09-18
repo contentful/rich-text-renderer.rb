@@ -1,16 +1,13 @@
+require_relative '../base_node_renderer'
+
 module StructuredTextRenderer
   # Base renderer for block type nodes
-  class BaseBlockRenderer
-    attr_reader :text_renderer
-
-    def initialize(config = {})
-      @text_renderer = config[:text_renderer]
-    end
-
+  class BaseBlockRenderer < BaseNodeRenderer
     # Renders block type nodes.
     def render(node)
-      node['content'].each_with_object([]) do |content, result|
-        result << "<#{render_tag}>#{text_renderer.render(content)}</#{render_tag}>"
+      node['content'].each_with_object([]) do |content_node, result|
+        renderer = find_renderer(content_node)
+        result << "<#{render_tag}>#{renderer.render(content_node)}</#{render_tag}>"
       end.join("\n")
     end
 

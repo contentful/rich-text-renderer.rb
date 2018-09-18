@@ -1,8 +1,10 @@
+require_relative '../base_node_renderer'
+
 module StructuredTextRenderer
   # Default embedded entry renderer.
   # Dumps entry to string.
   # This renderer should be overridden for your particular applications.
-  class EntryBlockRenderer
+  class EntryBlockRenderer < BaseNodeRenderer
     # Renders embedded entry node.
     def render(node)
       "<div>#{node['data']}</div>"
