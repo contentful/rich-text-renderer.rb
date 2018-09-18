@@ -9,6 +9,7 @@ module StructuredTextRenderer
 
       node.fetch('marks', []).each do |mark|
         renderer = mappings[mark['type']]
+        return mappings[nil].new(mappings).render(mark) if renderer.nil? && mappings.key?(nil)
         node['value'] = renderer.new(mappings).render(node) unless renderer.nil?
       end
 

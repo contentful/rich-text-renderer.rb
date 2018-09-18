@@ -11,8 +11,8 @@ module StructuredTextRenderer
 
     def find_renderer(node)
       renderer = mappings[node['nodeType']]
-      return if renderer.nil?
-      renderer.new(mappings)
+      return mappings[nil].new(mappings) if renderer.nil? && mappings.key?(nil)
+      renderer.new(mappings) unless renderer.nil?
     end
   end
 end

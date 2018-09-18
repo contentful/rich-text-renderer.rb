@@ -30,19 +30,18 @@ renderer.render(document)
 ```
 
 ## Using different renderers
--------------------------
 
 There are many cases in which HTML serialization is not what you want.
 Therefore, all renderers are overridable when creating a `StructuredTextRenderer`.
 
-Also, if you're planning to embed entries within your structured text, overriding the `entry_block_renderer` option is a must,
+Also, if you're planning to embed entries within your structured text, overriding the `'embedded-entry-block'` mapping is a must,
 as by default it only does `<div>#{entry.to_s}</div>`.
 
 You can override the configuration like follows:
 
 ```ruby
 renderer = StructuredTextRenderer::Renderer.new(
-  entry_block_renderer: MyEntryBlockRenderer
+  'embedded-entry-block' => MyEntryBlockRenderer
 )
 ```
 
@@ -51,13 +50,32 @@ Where `MyEntryBlockRenderer` requires to have a `#render(node)` method and needs
 An example entry renderer, assuming our entry has 2 fields called `name` and `description` could be:
 
 ```ruby
-class MyEntryBlockRenderer
+class MyEntryBlockRenderer < StructuredTextRenderer::BaseNodeRenderer
   def render(node)
     entry = node['data']
 
     "<div class='my-entry'><h3>#{entry.name}</h3><p><small>#{entry.description}</p></small></div>"
   end
 end
+```
+
+## Dealing with unknown node types
+
+By default, this gem will treat all unknown node types as errors and will raise an exception letting the user know which node mapping is missing.
+If you wish to remove this behaviour then replace the `nil` key of the mapping with a NullRenderer that returns an empty string, or something similar.
+
+An example would be like follows:
+
+```ruby
+class SilentNullRenderer < StructuredTextRenderer::BaseNodeRenderer
+  def render(node)
+    ""
+  end
+end
+
+renderer = StructuredTextRenderer::Renderer.new(
+  nil => SilentNullRenderer
+)
 ```
 
 ## License

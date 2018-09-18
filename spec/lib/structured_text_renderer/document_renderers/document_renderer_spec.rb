@@ -25,7 +25,8 @@ describe StructuredTextRenderer::DocumentRenderer do
     described_class.new(
       'heading-1' => StructuredTextRenderer::HeadingOneRenderer,
       'text' => StructuredTextRenderer::TextRenderer,
-      'bold' => StructuredTextRenderer::BoldRenderer
+      'bold' => StructuredTextRenderer::BoldRenderer,
+      nil => StructuredTextRenderer::NullRenderer
     )
   end
 
@@ -34,8 +35,8 @@ describe StructuredTextRenderer::DocumentRenderer do
       expect(subject.render(mock_document)).to eq "<h1><b>foo</b></h1>"
     end
 
-    it 'will skip unknown node types' do
-      expect(subject.render(mock_document_with_unknown_nodetype)).to eq ""
+    it 'will raise an error unknown node types' do
+      expect { subject.render(mock_document_with_unknown_nodetype) }.to raise_error "No renderer defined for 'unknown' nodes"
     end
   end
 end

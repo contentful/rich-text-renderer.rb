@@ -2,6 +2,7 @@ require_relative './text_renderers'
 require_relative './block_renderers'
 require_relative './document_renderers'
 require_relative './base_node_renderer'
+require_relative './null_renderer'
 
 # StructuredTextRenderer Namespace
 module StructuredTextRenderer
@@ -17,7 +18,8 @@ module StructuredTextRenderer
       'text' => TextRenderer,
       'bold' => BoldRenderer,
       'italic' => ItalicRenderer,
-      'underline' => UnderlineRenderer
+      'underline' => UnderlineRenderer,
+      nil => NullRenderer
     }
 
     def initialize(mappings = {})
