@@ -1,11 +1,12 @@
 require_relative './text_renderers'
 require_relative './block_renderers'
 require_relative './document_renderers'
+require_relative './base_node_renderer'
 
 # StructuredTextRenderer Namespace
 module StructuredTextRenderer
   # Renderer for StructuredText field from Contentful
-  class Renderer
+  class Renderer < BaseNodeRenderer
     # Default Renderers
     DEFAULT_MAPPINGS = {
       'document' => DocumentRenderer,
@@ -19,16 +20,14 @@ module StructuredTextRenderer
       'underline' => UnderlineRenderer
     }
 
-    attr_reader :mappings, :document_renderer
-
     def initialize(mappings = {})
       @mappings = DEFAULT_MAPPINGS.merge(mappings)
     end
 
     # Returns a rendered StructuredText document
     def render(document)
-      renderer = mappings[document['nodeType']]
-      renderer.new(mappings).render(document) unless renderer.nil?
+      renderer = find_renderer(document)
+      renderer.render(document) unless renderer.nil?
     end
   end
 end

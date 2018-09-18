@@ -1,12 +1,8 @@
+require_relative '../base_node_renderer'
+
 module StructuredTextRenderer
   # Base renderer for inline nodes.
-  class BaseInlineRenderer
-    attr_reader :mappings
-
-    def initialize(mappings = {})
-      @mappings = mappings
-    end
-
+  class BaseInlineRenderer < BaseNodeRenderer
     # Renders inline nodes.
     def render(node)
       "<#{render_tag}>#{node['value']}</#{render_tag}>"

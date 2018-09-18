@@ -1,15 +1,11 @@
+require_relative '../base_node_renderer'
+
 module StructuredTextRenderer
   # Renderer for Text nodes.
-  class TextRenderer
-    attr_reader :mappings
-
-    def initialize(mappings = {})
-      @mappings = mappings
-    end
-
+  class TextRenderer < BaseNodeRenderer
     # Renders text nodes with all markings.
     def render(node)
-      node = Marshal.load(Marshal.dump(node))
+      node = Marshal.load(Marshal.dump(node)) # Clone the node
 
       node.fetch('marks', []).each do |mark|
         renderer = mappings[mark['type']]

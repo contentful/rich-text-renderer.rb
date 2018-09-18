@@ -1,19 +1,15 @@
+require_relative '../base_node_renderer'
+
 module StructuredTextRenderer
   # Document renderer.
-  class DocumentRenderer
-    attr_reader :mappings
-
-    def initialize(mappings)
-      @mappings = mappings
-    end
-
+  class DocumentRenderer < BaseNodeRenderer
     # Renders all nodes in the document.
     def render(document)
       document['content'].each_with_object([]) do |node, result|
-        renderer = mappings[node['nodeType']]
+        renderer = find_renderer(node)
         next if renderer.nil?
 
-        result << renderer.new(mappings).render(node)
+        result << renderer.render(node)
       end.join("\n")
     end
   end
