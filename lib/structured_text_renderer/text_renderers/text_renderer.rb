@@ -3,12 +3,8 @@ module StructuredTextRenderer
   class TextRenderer
     attr_reader :mappings
 
-    def initialize(config = {})
-      @mappings = {
-        'bold' => config[:bold_renderer],
-        'italic' => config[:italic_renderer],
-        'underline' => config[:underline_renderer]
-      }
+    def initialize(mappings = {})
+      @mappings = mappings
     end
 
     # Renders text nodes with all markings.
@@ -17,7 +13,7 @@ module StructuredTextRenderer
 
       node.fetch('marks', []).each do |mark|
         renderer = mappings[mark['type']]
-        node['value'] = renderer.render(node) unless renderer.nil?
+        node['value'] = renderer.new(mappings).render(node) unless renderer.nil?
       end
 
       node['value']

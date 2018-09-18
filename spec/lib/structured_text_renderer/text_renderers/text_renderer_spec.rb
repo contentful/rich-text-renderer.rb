@@ -18,9 +18,9 @@ mock_node_unsupported_mark = {"value" => "foo", "marks" => [{"type" => "foobar"}
 describe StructuredTextRenderer::TextRenderer do
   subject do
     described_class.new(
-      bold_renderer: StructuredTextRenderer::BoldRenderer.new,
-      italic_renderer: StructuredTextRenderer::ItalicRenderer.new,
-      underline_renderer: StructuredTextRenderer::UnderlineRenderer.new
+      'bold' => StructuredTextRenderer::BoldRenderer,
+      'italic' => StructuredTextRenderer::ItalicRenderer,
+      'underline' => StructuredTextRenderer::UnderlineRenderer
     )
   end
 
@@ -41,7 +41,7 @@ describe StructuredTextRenderer::TextRenderer do
 
     it 'supports custom renderers' do
       subject = described_class.new(
-        bold_renderer: BoldMarkdownRenderer.new
+        'bold' => BoldMarkdownRenderer
       )
 
       expect(subject.render(mock_node_bold_only)).to eq "**foo**"

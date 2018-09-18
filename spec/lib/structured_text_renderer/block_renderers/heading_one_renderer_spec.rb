@@ -1,21 +1,14 @@
 require 'spec_helper'
 
-mock_node = {"content" => [{"value" => "foo"}]}
+mock_node = {"content" => [{"value" => "foo", "nodeType" => "text"}]}
 
-mock_node_with_marks = {"content" => [{"value" => "foo", "marks" => [{"type" => "bold"}]}]}
+mock_node_with_marks = {"content" => [{"value" => "foo", "nodeType" => "text", "marks" => [{"type" => "bold"}]}]}
 
 describe StructuredTextRenderer::HeadingOneRenderer do
-  let(:text_renderer) do
-    StructuredTextRenderer::TextRenderer.new(
-      bold_renderer: StructuredTextRenderer::BoldRenderer.new,
-      italic_renderer: StructuredTextRenderer::ItalicRenderer.new,
-      underline_renderer: StructuredTextRenderer::UnderlineRenderer.new
-    )
-  end
-
   subject do
     described_class.new(
-      text_renderer: text_renderer
+      'text' => StructuredTextRenderer::TextRenderer,
+      'bold' => StructuredTextRenderer::BoldRenderer
     )
   end
 

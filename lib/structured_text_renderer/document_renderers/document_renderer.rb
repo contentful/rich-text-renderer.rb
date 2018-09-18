@@ -3,13 +3,8 @@ module StructuredTextRenderer
   class DocumentRenderer
     attr_reader :mappings
 
-    def initialize(config = {})
-      @mappings = {
-        'heading-1' => config[:heading_one_renderer],
-        'heading-2' => config[:heading_two_renderer],
-        'paragraph' => config[:paragraph_renderer],
-        'embedded-entry-block' => config[:entry_block_renderer]
-      }
+    def initialize(mappings)
+      @mappings = mappings
     end
 
     # Renders all nodes in the document.
@@ -18,7 +13,7 @@ module StructuredTextRenderer
         renderer = mappings[node['nodeType']]
         next if renderer.nil?
 
-        result << renderer.render(node)
+        result << renderer.new(mappings).render(node)
       end.join("\n")
     end
   end

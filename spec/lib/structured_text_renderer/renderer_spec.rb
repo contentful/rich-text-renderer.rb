@@ -237,13 +237,13 @@ describe StructuredTextRenderer::Renderer do
   describe 'with all renderers overridden' do
     subject do
       described_class.new(
-        heading_one_renderer: HeadingOneMarkdownRenderer,
-        heading_two_renderer: HeadingTwoMarkdownRenderer,
-        paragraph_renderer: ParagraphMarkdownRenderer,
-        entry_block_renderer: EntryBlockMarkdownRenderer,
-        bold_renderer: BoldMarkdownRenderer,
-        italic_renderer: ItalicMarkdownRenderer,
-        underline_renderer: UnderlineMarkdownRenderer
+        'heading-1' => HeadingOneMarkdownRenderer,
+        'heading-2' => HeadingTwoMarkdownRenderer,
+        'paragraph' => ParagraphMarkdownRenderer,
+        'embedded-entry-block' => EntryBlockMarkdownRenderer,
+        'bold' => BoldMarkdownRenderer,
+        'italic' => ItalicMarkdownRenderer,
+        'underline' => UnderlineMarkdownRenderer
       )
     end
 
