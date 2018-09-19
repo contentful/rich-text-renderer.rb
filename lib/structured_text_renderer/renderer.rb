@@ -26,6 +26,7 @@ module StructuredTextRenderer
       'bold' => BoldRenderer,
       'italic' => ItalicRenderer,
       'underline' => UnderlineRenderer,
+      'code' => CodeRenderer,
       nil => NullRenderer
     }
 
