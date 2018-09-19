@@ -13,7 +13,7 @@ describe StructuredTextRenderer::HeadingTwoRenderer do
   end
 
   describe '#render' do
-    it 'renders a h1' do
+    it 'renders a h2' do
       expect(subject.render(mock_node)).to eq "<h2>foo</h2>"
     end
 

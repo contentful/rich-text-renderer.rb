@@ -18,6 +18,7 @@ module StructuredTextRenderer
       'heading-4' => HeadingFourRenderer,
       'heading-5' => HeadingFiveRenderer,
       'heading-6' => HeadingSixRenderer,
+      'quote' => QuoteRenderer,
       'hyperlink' => HyperlinkRenderer,
       'paragraph' => ParagraphRenderer,
       'list-item' => ListItemRenderer,

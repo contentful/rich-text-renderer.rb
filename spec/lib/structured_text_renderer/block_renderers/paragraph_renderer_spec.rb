@@ -13,7 +13,7 @@ describe StructuredTextRenderer::ParagraphRenderer do
   end
 
   describe '#render' do
-    it 'renders a h1' do
+    it 'renders a p' do
       expect(subject.render(mock_node)).to eq "<p>foo</p>"
     end
 

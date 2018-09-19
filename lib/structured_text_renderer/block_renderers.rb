@@ -1,5 +1,6 @@
 require_relative './block_renderers/hr_renderer'
 
+require_relative './block_renderers/quote_renderer'
 require_relative './block_renderers/paragraph_renderer'
 require_relative './block_renderers/hyperlink_renderer'
 
