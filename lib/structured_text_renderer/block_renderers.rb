@@ -1,6 +1,7 @@
 require_relative './block_renderers/hr_renderer'
 
 require_relative './block_renderers/paragraph_renderer'
+require_relative './block_renderers/hyperlink_renderer'
 
 require_relative './block_renderers/entry_block_renderer'
 

@@ -10,6 +10,7 @@ module StructuredTextRenderer
   class Renderer < BaseNodeRenderer
     # Default Renderers
     DEFAULT_MAPPINGS = {
+      nil => NullRenderer,
       'document' => DocumentRenderer,
       'heading-1' => HeadingOneRenderer,
       'heading-2' => HeadingTwoRenderer,
@@ -17,18 +18,18 @@ module StructuredTextRenderer
       'heading-4' => HeadingFourRenderer,
       'heading-5' => HeadingFiveRenderer,
       'heading-6' => HeadingSixRenderer,
-      'embedded-entry-block' => EntryBlockRenderer,
+      'hyperlink' => HyperlinkRenderer,
       'paragraph' => ParagraphRenderer,
+      'list-item' => ListItemRenderer,
       'ordered-list' => OrderedListRenderer,
       'unordered-list' => UnorderedListRenderer,
-      'list-item' => ListItemRenderer,
+      'embedded-entry-block' => EntryBlockRenderer,
       'hr' => HrRenderer,
       'text' => TextRenderer,
       'bold' => BoldRenderer,
-      'italic' => ItalicRenderer,
-      'underline' => UnderlineRenderer,
       'code' => CodeRenderer,
-      nil => NullRenderer
+      'italic' => ItalicRenderer,
+      'underline' => UnderlineRenderer
     }
 
     def initialize(mappings = {})
