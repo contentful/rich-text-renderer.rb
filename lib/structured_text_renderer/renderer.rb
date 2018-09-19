@@ -22,6 +22,7 @@ module StructuredTextRenderer
       'ordered-list' => OrderedListRenderer,
       'unordered-list' => UnorderedListRenderer,
       'list-item' => ListItemRenderer,
+      'hr' => HrRenderer,
       'text' => TextRenderer,
       'bold' => BoldRenderer,
       'italic' => ItalicRenderer,
