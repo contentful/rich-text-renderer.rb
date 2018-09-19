@@ -4,7 +4,7 @@ mock_node = {"content" => [{"value" => "foo", "nodeType" => "text"}]}
 
 mock_node_with_marks = {"content" => [{"value" => "foo", "nodeType" => "text", "marks" => [{"type" => "bold"}]}]}
 
-describe StructuredTextRenderer::HeadingTwoRenderer do
+describe StructuredTextRenderer::HeadingFourRenderer do
   subject do
     described_class.new(
       'text' => StructuredTextRenderer::TextRenderer,
@@ -13,12 +13,12 @@ describe StructuredTextRenderer::HeadingTwoRenderer do
   end
 
   describe '#render' do
-    it 'renders a h2' do
-      expect(subject.render(mock_node)).to eq "<h2>foo</h2>"
+    it 'renders a h4' do
+      expect(subject.render(mock_node)).to eq "<h4>foo</h4>"
     end
 
     it 'will propagate marks to text renderers' do
-      expect(subject.render(mock_node_with_marks)).to eq "<h2><b>foo</b></h2>"
+      expect(subject.render(mock_node_with_marks)).to eq "<h4><b>foo</b></h4>"
     end
   end
 end
