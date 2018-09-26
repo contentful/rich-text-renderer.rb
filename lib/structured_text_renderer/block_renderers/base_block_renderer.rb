@@ -5,13 +5,17 @@ module StructuredTextRenderer
   class BaseBlockRenderer < BaseNodeRenderer
     # Renders block type nodes.
     def render(node)
-      node['content'].each_with_object([]) do |content_node, result|
-        renderer = find_renderer(content_node)
-        result << "<#{render_tag}>#{renderer.render(content_node)}</#{render_tag}>"
-      end.join("\n")
+      "<#{render_tag}>#{render_content(node)}</#{render_tag}>"
     end
 
     protected
+
+    def render_content(node)
+      node['content'].each_with_object([]) do |content_node, result|
+        renderer = find_renderer(content_node)
+        result << renderer.render(content_node)
+      end.join
+    end
 
     def render_tag
       'div'
