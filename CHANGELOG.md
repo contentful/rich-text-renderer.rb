@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.0.2
+
 ### Fixed
 * Fixed rendering logic for block type nodes
 
