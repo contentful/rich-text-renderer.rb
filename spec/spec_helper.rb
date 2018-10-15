@@ -2,7 +2,7 @@ require 'simplecov'
 SimpleCov.start unless RUBY_PLATFORM == 'java'
 
 require 'rspec'
-require 'structured_text_renderer'
+require 'rich_text_renderer'
 
 RSpec.configure do |config|
   config.filter_run :focus => true
