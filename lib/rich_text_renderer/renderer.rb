@@ -25,6 +25,8 @@ module RichTextRenderer
       'ordered-list' => OrderedListRenderer,
       'unordered-list' => UnorderedListRenderer,
       'embedded-entry-block' => EntryBlockRenderer,
+      'embedded-asset-block' => AssetBlockRenderer,
+      'asset-hyperlink' => AssetHyperlinkRenderer,
       'hr' => HrRenderer,
       'text' => TextRenderer,
       'bold' => BoldRenderer,

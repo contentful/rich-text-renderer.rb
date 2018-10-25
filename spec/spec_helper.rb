@@ -9,6 +9,29 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 end
 
+class MockFile
+  attr_reader :content_type, :url
+
+  def initialize(json)
+    @url = json['url']
+    @content_type = json['contentType']
+  end
+end
+
+class MockAsset
+  attr_reader :fields, :file, :title
+
+  def initialize(json)
+    @fields = json['fields']
+    @file = MockFile.new(@fields['file'])
+    @title = @fields['title']
+  end
+
+  def url
+    file.url
+  end
+end
+
 class NodeRenderer
   attr_reader :mappings
 
