@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v0.2.0
+
 ### Added
 * Add Asset support
 
