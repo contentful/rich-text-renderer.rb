@@ -82,7 +82,7 @@ end
 
 class EntryBlockMarkdownRenderer < NodeRenderer
   def render(node)
-    "\n```\n#{node['data']}\n```\n"
+    "\n```\n#{node['data']['target']}\n```\n"
   end
 end
 

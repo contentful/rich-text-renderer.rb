@@ -9,7 +9,7 @@ describe RichTextRenderer::EntryBlockRenderer do
 
   describe '#render' do
     it 'will stringify node data' do
-      expect(subject.render(mock_data_node)).to eq '<div>{"target"=>{"sys"=>{"id"=>"foo", "type"=>"Link", "linkType"=>"Entry"}}}</div>'
+      expect(subject.render(mock_data_node)).to eq '<div>{"sys"=>{"id"=>"foo", "type"=>"Link", "linkType"=>"Entry"}}</div>'
     end
   end
 end
