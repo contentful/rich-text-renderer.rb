@@ -6,7 +6,7 @@ module RichTextRenderer
     protected
 
     def render_tag
-      'blockqoute'
+      'blockquote'
     end
   end
 end
