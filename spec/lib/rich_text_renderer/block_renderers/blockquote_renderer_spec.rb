@@ -14,12 +14,12 @@ describe RichTextRenderer::BlockQuoteRenderer do
   end
 
   describe '#render' do
-    it 'renders a blockqoute' do
-      expect(subject.render(mock_node)).to eq "<blockqoute><p>foo</p></blockqoute>"
+    it 'renders a blockquote' do
+      expect(subject.render(mock_node)).to eq "<blockquote><p>foo</p></blockquote>"
     end
 
     it 'will propagate marks to text renderers' do
-      expect(subject.render(mock_node_with_marks)).to eq "<blockqoute><p><b>foo</b></p></blockqoute>"
+      expect(subject.render(mock_node_with_marks)).to eq "<blockquote><p><b>foo</b></p></blockquote>"
     end
   end
 end
