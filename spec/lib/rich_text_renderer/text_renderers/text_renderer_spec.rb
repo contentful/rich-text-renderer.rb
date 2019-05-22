@@ -14,6 +14,10 @@ mock_node_multiple_marks = {
 
 mock_node_unsupported_mark = {"value" => "foo", "nodeType" => "text", "marks" => [{"type" => "foobar"}]}
 
+mock_node_unsafe_value = {"value" => "<script>alert('XSS!');</script>", "nodeType" => "text", "marks" => []}
+
+mock_node_unsafe_value_with_marks = {"value" => "<script>alert('XSS!');</script>", "nodeType" => "text", "marks" => [{"type" => "underline"}, {"type" => "italic"}, {"type" => "bold"}]}
+
 describe RichTextRenderer::TextRenderer do
   subject do
     described_class.new(
@@ -48,6 +52,14 @@ describe RichTextRenderer::TextRenderer do
       )
 
       expect(subject.render(mock_node_bold_only)).to eq "**foo**"
+    end
+
+    it 'escapes value' do
+      expect(subject.render(mock_node_unsafe_value)).to eq "&lt;script&gt;alert(&#39;XSS!&#39;);&lt;/script&gt;"
+    end
+
+    it 'renders marks but keeps value escaped' do
+      expect(subject.render(mock_node_unsafe_value_with_marks)).to eq "<b><i><u>&lt;script&gt;alert(&#39;XSS!&#39;);&lt;/script&gt;</u></i></b>"
     end
   end
 end
