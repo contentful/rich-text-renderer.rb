@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## v0.2.2
+### Fixed
+* Fixed mispelt blockquote tag. [#9](https://github.com/contentful/rich-text-renderer.rb/pull/9)
+* Removed the possibility of XSS via text in nodes. [#10](https://github.com/contentful/rich-text-renderer.rb/pull/10)
+
 ## v0.2.1
 ### Fixed
 * Default `EntryBlockRenderer` now properly stringifies `data.target` instead of just data.
