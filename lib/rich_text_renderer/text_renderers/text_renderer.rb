@@ -7,6 +7,8 @@ module RichTextRenderer
     def render(node)
       node = Marshal.load(Marshal.dump(node)) # Clone the node
 
+      node['value'] = CGI.escapeHTML(node['value'])
+
       node.fetch('marks', []).each do |mark|
         renderer = mappings[mark['type']]
         return mappings[nil].new(mappings).render(mark) if renderer.nil? && mappings.key?(nil)
