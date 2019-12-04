@@ -7,7 +7,7 @@ module RichTextRenderer
     ANCHOR_HTML = ->(url, text) { "<a href=\"#{url}\">#{text}</a>" }
 
     # Renders asset nodes
-    def render(node)
+    def render(node, _opts = {})
       asset = nil
       begin
         asset = node['data']['target']

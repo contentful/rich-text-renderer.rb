@@ -4,7 +4,7 @@ module RichTextRenderer
   # Catch-all renderer for missing node types
   class NullRenderer < BaseNodeRenderer
     # Will raise an exception indicating the missing node type.
-    def render(node)
+    def render(node, _opts = {})
       fail "No renderer defined for '#{node_type(node)}' nodes"
     end
 

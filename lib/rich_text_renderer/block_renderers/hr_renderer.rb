@@ -4,7 +4,7 @@ module RichTextRenderer
   # hr node renderer
   class HrRenderer < BaseNodeRenderer
     # Renders an hr node
-    def render(_node)
+    def render(_node, _opts = {})
       '<hr />'
     end
   end

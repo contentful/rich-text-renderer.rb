@@ -4,7 +4,7 @@ module RichTextRenderer
   # Base renderer for inline nodes.
   class BaseInlineRenderer < BaseNodeRenderer
     # Renders inline nodes.
-    def render(node)
+    def render(node, _opts = {})
       "<#{render_tag}>#{node['value']}</#{render_tag}>"
     end
 

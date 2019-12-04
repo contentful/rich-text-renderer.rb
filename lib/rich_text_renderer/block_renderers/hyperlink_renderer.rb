@@ -4,7 +4,7 @@ module RichTextRenderer
   # a node renderer.
   class HyperlinkRenderer < BaseBlockRenderer
     # Renders hyperlink
-    def render(node)
+    def render(node, _opts = {})
       "<a href=\"#{node['data']['uri']}\">#{render_content(node)}</a>"
     end
   end

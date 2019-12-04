@@ -59,6 +59,14 @@ class MyEntryBlockRenderer < RichTextRenderer::BaseNodeRenderer
 end
 ```
 
+### Passing options for custom renderers
+
+You can pass in options to the render method for advanced uses and processing based on outside context:
+
+```
+renderer.render(document, { foo: 'bar' })
+```
+
 ## Dealing with unknown node types
 
 By default, this gem will treat all unknown node types as errors and will raise an exception letting the user know which node mapping is missing.

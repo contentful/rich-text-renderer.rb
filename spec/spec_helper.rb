@@ -49,31 +49,31 @@ class NodeRenderer
 end
 
 class HeadingOneMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     node['content'].each_with_object([]) do |c, res|
       renderer = find_renderer(c)
       next if renderer.nil?
-      res << "# #{renderer.render(c)}"
+      res << "# #{renderer.render(c, opts)}"
     end.join("\n")
   end
 end
 
 class HeadingTwoMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     node['content'].each_with_object([]) do |c, res|
       renderer = find_renderer(c)
       next if renderer.nil?
-      res << "## #{renderer.render(c)}"
+      res << "## #{renderer.render(c, opts)}"
     end.join("\n")
   end
 end
 
 class ParagraphMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     paragraphs = node['content'].each_with_object([]) do |c, res|
       renderer = find_renderer(c)
       next if renderer.nil?
-      res << "#{renderer.render(c)}"
+      res << "#{renderer.render(c, opts)}"
     end.join("\n")
 
     "\n#{paragraphs}\n"
@@ -81,25 +81,25 @@ class ParagraphMarkdownRenderer < NodeRenderer
 end
 
 class EntryBlockMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     "\n```\n#{node['data']['target']}\n```\n"
   end
 end
 
 class BoldMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     "**#{node['value']}**"
   end
 end
 
 class ItalicMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     "*#{node['value']}*"
   end
 end
 
 class UnderlineMarkdownRenderer < NodeRenderer
-  def render(node)
+  def render(node, opts = {})
     "__#{node['value']}__"
   end
 end

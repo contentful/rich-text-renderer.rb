@@ -40,9 +40,9 @@ module RichTextRenderer
     end
 
     # Returns a rendered RichText document
-    def render(document)
+    def render(document, opts = {})
       renderer = find_renderer(document)
-      renderer.render(document) unless renderer.nil?
+      renderer.render(document, opts) unless renderer.nil?
     end
   end
 end
