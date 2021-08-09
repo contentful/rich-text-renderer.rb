@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Unreleased
+* Removed unwanted files from gem release package.
 
 ## v0.2.2
 ### Fixed
