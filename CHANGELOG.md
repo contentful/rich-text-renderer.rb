@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## Unreleased
+* Added support for Rich Text Tables
 
 ## v0.2.3
 * Removed unwanted files from gem release package.
