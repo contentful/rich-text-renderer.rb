@@ -32,7 +32,11 @@ module RichTextRenderer
       'bold' => BoldRenderer,
       'code' => CodeRenderer,
       'italic' => ItalicRenderer,
-      'underline' => UnderlineRenderer
+      'underline' => UnderlineRenderer,
+      'table' => TableRenderer,
+      'table-row' => TableRowRenderer,
+      'table-cell' => TableCellRenderer,
+      'table-header-cell' => TableHeaderCellRenderer
     }
 
     def initialize(mappings = {})

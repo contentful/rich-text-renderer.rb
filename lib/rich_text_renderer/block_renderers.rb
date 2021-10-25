@@ -18,3 +18,8 @@ require_relative './block_renderers/heading_three_renderer'
 require_relative './block_renderers/list_item_renderer'
 require_relative './block_renderers/ordered_list_renderer'
 require_relative './block_renderers/unordered_list_renderer'
+
+require_relative './block_renderers/table_renderer'
+require_relative './block_renderers/table_row_renderer'
+require_relative './block_renderers/table_cell_renderer'
+require_relative './block_renderers/table_header_cell_renderer'
