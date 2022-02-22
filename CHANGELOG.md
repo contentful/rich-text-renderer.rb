@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Master
+* Changed CI/CD vendor to CircleCI
+
 ## v0.3.0
 * Added support for Rich Text Tables
 
