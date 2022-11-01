@@ -2,6 +2,7 @@
 
 ## Master
 * Changed CI/CD vendor to CircleCI
+* Fix linting offences
 
 ## v0.3.0
 * Added support for Rich Text Tables
