@@ -3,6 +3,7 @@
 ## Master
 * Changed CI/CD vendor to CircleCI
 * Fixed handling `nil` nodes
+* Fix linting offences
 
 ## v0.3.0
 * Added support for Rich Text Tables
