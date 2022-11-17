@@ -10,7 +10,7 @@ module RichTextRenderer
     protected
 
     def find_renderer(node)
-      renderer = mappings[node['nodeType']]
+      renderer = mappings[node.to_h['nodeType']]
       return mappings[nil].new(mappings) if renderer.nil? && mappings.key?(nil)
       renderer.new(mappings) unless renderer.nil?
     end
