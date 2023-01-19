@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Master
+## v0.3.1
 * Changed CI/CD vendor to CircleCI
 * Fixed handling `nil` nodes
 * Fix linting offences
