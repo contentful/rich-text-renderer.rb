@@ -12,4 +12,3 @@ module RichTextRenderer
     end
   end
 end
-
