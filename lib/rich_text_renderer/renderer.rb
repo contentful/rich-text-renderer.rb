@@ -33,6 +33,8 @@ module RichTextRenderer
       'code' => CodeRenderer,
       'italic' => ItalicRenderer,
       'underline' => UnderlineRenderer,
+      'superscript' => SuperscriptRenderer,
+      'subscript' => SubscriptRenderer,
       'table' => TableRenderer,
       'table-row' => TableRowRenderer,
       'table-cell' => TableCellRenderer,
