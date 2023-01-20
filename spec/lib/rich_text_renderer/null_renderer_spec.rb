@@ -4,6 +4,10 @@ describe RichTextRenderer::NullRenderer do
   subject { described_class.new }
 
   describe 'null renderer will raise errors for unknown nodes' do
+    it 'will check if the node itself is nil' do
+      expect { subject.render(nil) }.to raise_error "No renderer defined for 'nil' nodes"
+    end
+
     it 'will look for nodeType' do
       expect { subject.render({'nodeType' => 'foo'}) }.to raise_error "No renderer defined for 'foo' nodes"
     end

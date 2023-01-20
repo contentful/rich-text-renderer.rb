@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = 'rubygems@contentful.com'
   gem.homepage      = 'https://github.com/contentful/rich-text-renderer.rb'
 
-  gem.files         = Dir["lib/**/*", "CHANGELOG.md", "LICENSE.txt", "README.md"]
+  gem.files         = Dir['lib/**/*', 'CHANGELOG.md', 'LICENSE.txt', 'README.md']
   gem.executables   = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^spec/})
   gem.require_paths = ['lib']

@@ -305,4 +305,12 @@ describe RichTextRenderer::Renderer do
       ].join("\n")
     end
   end
+
+  describe 'with a node that is nil' do
+    subject { described_class.new }
+
+    it 'fetches the NullRenderer class successfully, and raises an error' do
+      expect { subject.render(nil) }.to raise_error "No renderer defined for 'nil' nodes"
+    end
+  end
 end
