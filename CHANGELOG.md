@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Master/Unreleased
+* Added support for superscript and subscript
+
 ## v0.3.1
 * Changed CI/CD vendor to CircleCI
 * Fixed handling `nil` nodes
