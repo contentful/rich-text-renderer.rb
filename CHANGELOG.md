@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## Master/Unreleased
+## v0.3.2
 * Added support for superscript and subscript
 
 ## v0.3.1
