@@ -4,6 +4,8 @@
 * Added ruby version 3.3, 3.2 and 3.1 to CI/CD.
 * Removed ruby version 2.6, 2.7 and 3.0 from CI/CD.
 * Updated bundler to latest version.
+* Updated rubocop to latest version.
+* Updated rake to latest version.
 
 ## v0.3.2
 * Added support for superscript and subscript
