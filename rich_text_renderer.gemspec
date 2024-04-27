@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_development_dependency 'bundler'
-  gem.add_development_dependency 'rake', '< 11.0'
+  gem.add_development_dependency 'rake', '~> 13.1.0'
   gem.add_development_dependency 'rubygems-tasks', '~> 0.2'
 
   gem.add_development_dependency 'guard'
@@ -24,7 +24,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'guard-rubocop'
   gem.add_development_dependency 'guard-yard'
   gem.add_development_dependency 'yard'
-  gem.add_development_dependency 'rubocop', '~> 0.49.1'
+  gem.add_development_dependency 'rubocop', '~> 1.62.1'
   gem.add_development_dependency 'rspec', '~> 3'
   gem.add_development_dependency 'simplecov'
 end
