@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rich-text-renderer.rb
+  description: This library provides rendering capabilities for the RichText field type for Ruby. 
+  annotations:
+    github.com/project-slug: contentful/rich-text-renderer.rb
+    contentful.com/service-tier: "4"
+  tags:
+    - tier-4
+spec:
+  type: library
+  lifecycle: production
+  owner: group:team-developer-experience
