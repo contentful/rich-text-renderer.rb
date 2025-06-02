@@ -7,7 +7,7 @@ module RichTextRenderer
   class EntryBlockRenderer < BaseNodeRenderer
     # Renders embedded entry node.
     def render(node)
-      "<div>#{node['data']['target']}</div>"
+      "<div>#{node['data']['target'].inspect.gsub(' => ', '=>')}</div>"
     end
   end
 end

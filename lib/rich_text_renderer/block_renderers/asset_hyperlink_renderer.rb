@@ -12,7 +12,7 @@ module RichTextRenderer
       begin
         asset = node['data']['target']
       rescue
-        fail "Node target is not an asset - Node: #{node}"
+        fail "Node target is not an asset - Node: #{node.inspect.gsub(' => ', '=>')}"
       end
 
       # Check by class name instead of instance type to
@@ -21,13 +21,13 @@ module RichTextRenderer
 
       if asset.is_a?(::Hash)
         unless asset.key?('fields') && asset['fields'].key?('file')
-          fail "Node target is not an asset - Node: #{node}"
+          fail "Node target is not an asset - Node: #{node.inspect.gsub(' => ', '=>')}"
         end
 
         return render_hash(asset, node)
       end
 
-      fail "Node target is not an asset - Node: #{node}"
+      fail "Node target is not an asset - Node: #{node.inspect.gsub(' => ', '=>')}"
     end
 
     protected

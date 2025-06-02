@@ -14,7 +14,7 @@ module RichTextRenderer
       return 'nil' if node.nil?
       return node['nodeType'] if node.key?('nodeType')
       return node['type'] if node.key?('type')
-      node
+      node.inspect.gsub(' => ', '=>')
     end
   end
 end
