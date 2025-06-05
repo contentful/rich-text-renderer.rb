@@ -6,6 +6,7 @@
 * Updated bundler to latest version.
 * Updated rubocop to latest version.
 * Updated rake to latest version.
+* Fixed hash string formatting in error messages and renderers to match test expectations.
 
 ## v0.3.2
 * Added support for superscript and subscript
