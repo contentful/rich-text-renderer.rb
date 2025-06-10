@@ -1,11 +1,12 @@
 # CHANGELOG
 
 ## Unreleased
-* Added ruby version 3.3, 3.2 and 3.1 to CI/CD.
-* Removed ruby version 2.6, 2.7 and 3.0 from CI/CD.
+* Added ruby version 3.4, 3.3 and 3.2 to CI/CD.
+* Removed ruby version 2.6, 2.7, 3.0 and 3.1 from CI/CD.
 * Updated bundler to latest version.
 * Updated rubocop to latest version.
 * Updated rake to latest version.
+* Fixed hash string formatting in error messages and renderers to match test expectations.
 
 ## v0.3.2
 * Added support for superscript and subscript
