@@ -1,6 +1,8 @@
 # CHANGELOG
 
 ## Unreleased
+
+## v0.3.3
 * Added ruby version 3.4, 3.3 and 3.2 to CI/CD.
 * Removed ruby version 2.6, 2.7, 3.0 and 3.1 from CI/CD.
 * Updated bundler to latest version.
