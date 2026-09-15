@@ -76,7 +76,7 @@ top. Add your entry there as part of the same Pull Request. Do not bump
 
 ## Review and merge
 
-`.github/CODEOWNERS` routes every path to `@contentful/team-developer-experience`,
+`.github/CODEOWNERS` routes every path to `@contentful/group-applied-ai-solutions`,
 so a review from that team is required. CI must be green. Squash or merge as the
 reviewer prefers; the history contains both styles.
 
