@@ -16,7 +16,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ['lib']
 
   gem.add_development_dependency 'bundler'
-  gem.add_development_dependency 'rake', '~> 13.1.0'
+  gem.add_development_dependency 'rake', '~> 13.4.0'
   gem.add_development_dependency 'rubygems-tasks', '~> 0.2'
 
   gem.add_development_dependency 'guard'
